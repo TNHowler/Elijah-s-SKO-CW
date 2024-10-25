@@ -78,3 +78,13 @@ function draw() {
     height / 2  // Specify the height for wrapping the text
   );
 };
+
+function mousePressed() {
+  for (let i = 0; i < ellipses.length; i++) {
+    let e = ellipses[i];
+    let d = dist(mouseX, mouseY, e.x, e.y);
+    if (d < e.w / 2) {
+      window.location.href = e.url;
+    }
+  }
+}
